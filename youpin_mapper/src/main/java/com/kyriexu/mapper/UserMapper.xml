@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kyriexu.mapper.UserMapper">
+
+
+    <insert id="addUser">
+        insert into test_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username!=null">
+                username,
+            </if>
+            <if test="password!=null">
+                password,
+            </if>
+            <if test="email!=null">
+                email
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username!=null">
+                #{username},
+            </if>
+            <if test="password!=null">
+                #{password},
+            </if>
+            <if test="email!=null">
+                #{email}
+            </if>
+        </trim>
+    </insert>
+    <update id="updateUser">
+        update test_user
+        <set>
+            <if test="password!=null">
+                password = #{password},
+            </if>
+            <if test="email != null">
+                email = #{email}
+            </if>
+        </set>
+        <where>
+            username = #{username}
+        </where>
+    </update>
+    <delete id="deleteUser">
+        delete from test_user
+        where username=#{username}
+    </delete>
+    <select id="getAllUsers" resultType="com.kyriexu.model.User">
+        select id,username,password,email
+        from test_user
+    </select>
+    <select id="getUserByUsername" resultType="com.kyriexu.model.User">
+        select * from test_user where username = #{username}
+    </select>
+</mapper>
