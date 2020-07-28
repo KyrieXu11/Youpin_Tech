@@ -5,5 +5,5 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: qq18717128499
+    password: 
     type: com.alibaba.druid.pool.DruidDataSource
