@@ -2,10 +2,10 @@
 
 本项目采用的包如下：
 
-+ SpringBoot 2.2.2 REALEASE
++ SpringBoot 2.2.2 RELEASE
 + Mybatis
 + Lombok
-+ Swagger（这里稍微有点bug，待修复）
++ Swagger（切换回2.9.2的版本就没问题了）
 + JJWT （jwt的一种实现）
 + druid
 
@@ -56,3 +56,8 @@
 ## 全局异常处理
 
 使用全局异常处理来捕捉代码抛出的异常（自定义异常类）从而返回给前端一个正确的指引的消息
+
+## 项目文档地址
+```
+http://localhost:8080/swagger-ui.html
+```
